@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorClassBg"
+    android:layout_height="match_parent"
+    tools:context=".fragment.DetailFragment.DetailCateFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorBar"
+        android:layout_height="@dimen/dp_210">
+        <com.youth.banner.Banner
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_145"
+            android:id="@+id/banner_detail" />
+
+        <TextView
+            android:paddingTop="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_detail_title"/>
+
+        <TextView
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_detail_price"
+            android:textColor="@color/colorRed"/>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:background="@color/colorBar"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:id="@+id/ll_detail_item"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_30">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_3"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_height="wrap_content"
+            android:text="已选"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:id="@+id/tv_detail_desc"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_weight="1"
+            android:src="@mipmap/detail_sheep"/>
+    </LinearLayout>
+
+</LinearLayout>

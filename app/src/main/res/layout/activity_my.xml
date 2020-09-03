@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorClassBg1"
+    tools:context=".MyActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/My_toolbar"
+        android:background="@color/colorBarSelect"
+        app:navigationIcon="@drawable/ic_chevron_left_black_24dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人信息"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            android:textColor="@color/colorBar"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:textStyle="bold"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/colorBar"
+            android:layout_gravity="right"/>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:id="@+id/mUserIconView"
+        style="@style/user_info_line_style"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin"
+        android:paddingTop="@dimen/common_padding_middle"
+        android:paddingBottom="@dimen/common_padding_middle">
+
+        <TextView
+            style="@style/user_info_label_style"
+            android:text="头像" />
+
+        <ImageView
+            android:id="@+id/mArrowIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_chevron_right_black_24dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mUserIconIv"
+            android:layout_width="@dimen/common_icon_width"
+            android:layout_height="@dimen/common_icon_height"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20.0dip"
+            android:layout_toLeftOf="@id/mArrowIv"
+            android:src="@mipmap/icon_default_user" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/user_info_line_style">
+
+        <TextView
+            style="@style/user_info_label_style"
+            android:text="昵称" />
+
+        <EditText
+            android:id="@+id/mUserNameEt"
+            style="@style/user_info_content_style"
+            android:background="@null"
+            android:hint="请称呼我"
+            android:maxLength="10" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/user_info_line_style">
+
+        <TextView
+            style="@style/user_info_label_style"
+            android:text="性别" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/mGenderBoyRb"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:layout_marginRight="@dimen/common_margin"
+                android:background="@drawable/gender_bg_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="男"
+                android:textColor="@drawable/gender_text_selector"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioButton
+                android:id="@+id/mGenderGirlRb"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:background="@drawable/gender_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="女"
+                android:textColor="@drawable/gender_text_selector"
+                android:textSize="@dimen/sp_14" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/user_info_line_style">
+
+        <TextView
+            style="@style/user_info_label_style"
+            android:text="手机" />
+
+        <TextView
+            android:id="@+id/mUserPhoneTv"
+            style="@style/user_info_content_style" />
+    </RelativeLayout>
+
+    <RelativeLayout style="@style/user_info_line_style">
+
+        <TextView
+            style="@style/user_info_label_style"
+            android:text="签名" />
+
+        <EditText
+            android:id="@+id/mUserSignEt"
+            style="@style/user_info_content_style"
+            android:background="@null"
+            android:hint="请您填写签名"
+            android:inputType="textEmailAddress" />
+    </RelativeLayout>
+
+</LinearLayout>

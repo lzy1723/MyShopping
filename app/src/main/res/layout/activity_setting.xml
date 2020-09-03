@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/setting_toolbar"
+        android:background="@color/coloBarSelect1"
+        app:navigationIcon="@drawable/ic_chevron_left_black_24dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置"
+            android:textColor="@color/colorBar"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:text="用户协议"
+        android:id="@+id/tv_setting1"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_8"
+        android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+        android:paddingRight="@dimen/dp_8"
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_trtl"
+        android:layout_height="@dimen/dp_50" />
+    <TextView
+        android:text="反馈意见"
+        android:id="@+id/tv_setting2"
+        android:textSize="@dimen/sp_16"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_8"
+        android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+        android:paddingRight="@dimen/dp_8"
+        android:background="@drawable/shape_trtl"
+        android:layout_height="@dimen/dp_50" />
+    <TextView
+        android:text="关于"
+        android:id="@+id/tv_setting3"
+        android:textSize="@dimen/sp_16"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_8"
+        android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+        android:paddingRight="@dimen/dp_8"
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_trtl"
+        android:layout_height="@dimen/dp_50"
+
+        android:layout_marginBottom="@dimen/dp_10"/>
+
+    <Button
+        android:background="@drawable/shape_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:text="退出登录"
+        android:textColor="@color/colorBar"
+        android:id="@+id/exit_login"
+        android:layout_margin="@dimen/dp_10"/>
+
+</LinearLayout>

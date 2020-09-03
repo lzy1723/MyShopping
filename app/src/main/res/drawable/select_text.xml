@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false" android:color="@color/colorSbu" /> <!-- un selected -->
+    <item android:state_selected="true" android:color="@color/colorBarSelect" /> <!-- selected -->
+    <item android:color="@color/colorSbu" /> <!-- default 这个要在最底下，不然没有效果-->
+</selector>

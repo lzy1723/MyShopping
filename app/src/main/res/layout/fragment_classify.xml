@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorClassBg"
+    android:orientation="vertical"
+    tools:context=".fragment.ClassifyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBarSelect"
+        android:id="@+id/classToolbar">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="商品分类"
+            android:textStyle="bold"
+            android:textColor="@color/colorBar"/>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="@dimen/dp_0"
+            android:background="@color/colorBar"
+            android:layout_height="match_parent"
+            android:id="@+id/classify_rlv"
+            android:layout_weight="3"
+            android:scrollbars="none"
+            android:overScrollMode="never"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@color/colorClassBg"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_margin="@dimen/dp_5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/category_banner"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热卖推荐"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:padding="@dimen/dp_5"
+            android:id="@+id/tv_header"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hot_classify_rlv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:background="@drawable/class_shape"/>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

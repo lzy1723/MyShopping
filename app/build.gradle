@@ -1,0 +1,138 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.example.myshopping"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.example.myshopping",
+                JPUSH_APPKEY : "742e0e74fb140f92e6d5a2f6", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('MyShop.jks')
+            storePassword "123456"
+            keyAlias "MyShopKey"
+            keyPassword "123456"
+        }
+        release {
+            storeFile file('MyShop.jks')
+            storePassword "123456"
+            keyAlias "MyShopKey"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation(name: 'alipaySdk-15.7.9-20200727142846', ext: 'aar')
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+    implementation 'com.github.crosswall:Android-Coverflow:release-v1.0.4'
+
+    api 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
+
+    //banner依赖
+    api 'com.youth.banner:banner:1.4.10'
+    //Gson解析
+    api 'com.google.code.gson:gson:2.2.4'
+//异步图片
+    api 'com.github.bumptech.glide:glide:4.8.0'
+//侧滑菜单/TabLayout
+    api 'com.android.support:design:29.0.0'
+//RecyclerView依赖
+    api 'com.android.support:recyclerview-v7:29.0.0'
+
+    api 'com.github.shts:TriangleLabelView:1.1.2'
+//万能适配器
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+    implementation 'ren.qinc.numberbutton:numberbutton:0.0.1'
+    //流式布局
+    api 'com.zhy:flowlayout-lib:1.0.3'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //极光推送
+    implementation 'cn.jiguang.sdk:jpush:3.7.0'  // 此处以JPush 3.7.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.4.2'  // 此处以JCore 2.4.2 版本为例。
+    //zxing二维码
+    implementation 'com.google.zxing:core:3.3.3'
+
+    //圆形imageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+//相册选择框架
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.8'
+
+    //选择弹窗
+    implementation 'com.bigkoo:alertview:1.0.3'
+//选择弹窗
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //圆形按钮
+    implementation 'q.rorbin:badgeview:1.1.2'
+
+    implementation project(path: ':httplibrary')
+    implementation project(path: ':mvplibrary')
+}
